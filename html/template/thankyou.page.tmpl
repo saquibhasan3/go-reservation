@@ -1,0 +1,84 @@
+{{template "base" .}}
+{{define "content"}}
+{{ $res := index .Data "contact" }}
+	<div class="section big-55-height over-hide z-bigger">
+		<div class="parallax parallax-top" style="background-image: url('/static/img/gallery/10.jpg')"></div>
+		<div class="dark-over-pages"></div>
+	
+		<div class="hero-center-section pages">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-12 parallax-fade-top">
+						<div class="hero-text">Thank You</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section padding-top-bottom-smaller background-dark-2 over-hide">		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">	
+					<h5 class="color-grey">A new dimension of luxury.</h5>
+					<p class="color-white mt-3 mb-3"><em>our presentation, 0:48 min</em></p>
+					<a href="https://vimeo.com/54851233" class="video-button" data-fancybox><i class="fa fa-play"></i></a>
+				</div>
+			</div>
+		</div>	
+	</div>
+
+    
+	<div class="section padding-top z-bigger">
+		<div class="container">
+			<div class="row justify-content-center padding-bottom-smaller">
+				<div class="col-md-8">
+					<div class="subtitle with-line text-center mb-4">We have got your message. Our team member will connect with you very soon.</div>
+				</div>
+				<div class="section clearfix"></div>
+				<div class="col-md-6">
+					<div class="address">
+						<div class="address-in text-left">
+							<p class="color-black">Name:</p>
+						</div>
+						<div class="address-in text-right">
+							<p>{{ $res.FirstName }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="address">
+						<div class="address-in text-left">
+							<p class="color-black">Email:</p>
+						</div>
+						<div class="address-in text-right">
+							<p>{{ $res.LastName }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="address">
+						<div class="address-in text-left">
+							<p class="color-black">Phone</p>
+						</div>
+						<div class="address-in text-right">
+							<p>{{ $res.Phone }}</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="address">
+						<div class="address-in text-left">
+							<p class="color-black">Message:</p>
+						</div>
+						<div class="address-in text-right">
+							<p>{{ $res.Message }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	
+
+{{end}}

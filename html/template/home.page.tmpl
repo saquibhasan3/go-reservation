@@ -1,0 +1,236 @@
+{{template "base" .}}
+{{define "content"}}
+
+	<div class="section background-dark over-hide">
+	
+		<div class="hero-center-section">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-10 col-sm-8 parallax-fade-top">
+						<div class="hero-text">Discover your paradise under the Greek sky</div>
+					</div>
+					<div class="col-12 mt-3 mb-5 parallax-fade-top">
+						<div class="hero-stars">
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+							<i class="fa fa-star-o"></i>
+						</div>
+					</div>
+					<div class="col-12 mt-3 parallax-fade-top">
+                        <form action="/search-availability" method="POST" id="search-availability">
+                        <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
+                            <div class="booking-hero-wrap">
+                                <div class="row justify-content-center">
+                                    <div class="col-12 no-mob">
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <input type="text" name="first_name" placeholder="First Name" class="wide">
+                                                <span id="first_name_error"></span>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="text" name="last_name" placeholder="Last Name" class="wide">
+                                                <span id="last_name_error"></span>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="text" name="email" placeholder="Email" class="wide">
+                                                <span id="email_error"></span>
+                                            </div>
+                                            <div class="col-3">
+                                                <input type="text" name="phone" placeholder="Phone" class="wide">
+                                                <span id="phone_error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-5 no-mob">
+                                        <div class="input-daterange input-group" id="flight-datepicker">
+                                            <div class="row">	
+                                                <div class="col-6">
+                                                    <div class="form-item">
+                                                        <span class="fontawesome-calendar"></span>
+                                                        <input class="input-sm" type="text" autocomplete="off" id="start-date-1" name="start_date" placeholder="chech-in date" data-date-format="DD, MM d"/>
+                                                        <span class="date-text date-depart" id="start_error"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-item">
+                                                        <span class="fontawesome-calendar"></span>
+                                                        <input class="input-sm" type="text" autocomplete="off" id="end-date-1" name="end_date" placeholder="check-out date" data-date-format="DD, MM d"/>
+                                                        <span class="date-text date-return" id="end_error"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>	
+                                    </div>
+                                    <div class="col-5 no-mob">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <select name="adults" class="wide">
+                                                    <option data-display="adults">adults</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                                <span id="adults_error"></span>
+                                            </div>
+                                            <div class="col-4">
+                                                <select name="children" class="wide">
+                                                    <option data-display="children">children</option>
+                                                    <option value="0">0</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                </select>
+                                                <span id="children_error"></span>
+                                            </div>
+                                            <div class="col-4">
+                                                <select name="room_id" class="wide">
+                                                    <option data-display="room">room</option>
+                                                    <option value="1">Normal</option>
+                                                    <option value="2">Luxury</option>
+                                                </select>
+                                                <span id="children_error"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6  col-sm-4 col-lg-2">
+                                        <button type="submit" class="btn booking-button" >Book</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="slideshow">
+			<div class="slide slide--current parallax-top">
+				<figure class="slide__figure">
+					<div class="slide__figure-inner">
+						<div class="slide__figure-img" style="background-image: url(/static/img/1.jpg)"></div>
+						<div class="slide__figure-reveal"></div>
+					</div>
+				</figure>
+			</div>
+			<div class="slide parallax-top">
+				<figure class="slide__figure">
+					<div class="slide__figure-inner">
+						<div class="slide__figure-img" style="background-image: url(/static/img/2.jpg)"></div>
+						<div class="slide__figure-reveal"></div>
+					</div>
+				</figure>
+			</div>
+			<div class="slide parallax-top">
+				<figure class="slide__figure">
+					<div class="slide__figure-inner">
+						<div class="slide__figure-img" style="background-image: url(/static/img/3.jpg)"></div>
+						<div class="slide__figure-reveal"></div>
+					</div>
+				</figure>
+			</div>
+			<!-- revealer -->
+			<div class="revealer">
+				<div class="revealer__item revealer__item--left"></div>
+				<div class="revealer__item revealer__item--right"></div>
+			</div>
+			<nav class="arrow-nav fade-top">
+				<button class="arrow-nav__item arrow-nav__item--prev">
+					<svg class="icon icon--nav"><use xlink:href="#icon-nav"></use></svg>
+				</button>
+				<button class="arrow-nav__item arrow-nav__item--next">
+					<svg class="icon icon--nav"><use xlink:href="#icon-nav"></use></svg>
+				</button>
+			</nav>
+			<!-- navigation -->
+			<nav class="nav fade-top">
+				<button class="nav__button">
+					<span class="nav__button-text"></span>
+				</button>
+				<h2 class="nav__chapter">discover your paradise</h2>
+				<div class="toc">
+					<a class="toc__item" href="#entry-1">
+						<span class="toc__item-title">discover your paradise</span>
+					</a>
+					<a class="toc__item" href="#entry-2">
+						<span class="toc__item-title">unpretentious comfort</span>
+					</a>
+					<a class="toc__item" href="#entry-3">
+						<span class="toc__item-title">azure sea sparkling</span>
+					</a>
+				</div>
+			</nav>
+			<!-- little sides -->
+			<div class="slideshow__indicator"></div>
+			<div class="slideshow__indicator"></div>
+		</div>
+	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>This is Home Page</h1>
+                <p>{{index .StringMap "test"}}</p>
+                <p>
+                    {{if ne (index .StringMap "remote_ip") ""}}
+                        IP Address : {{index .StringMap "remote_ip"}}
+                    {{else}}
+                        I don't know what your IP address is! Visit <a href="/about">About Page</a>
+                    {{end}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+{{end}}
+
+{{define "js"}}
+
+	<script src="/static/js/flip-slider.js"></script>
+	<script src="/static/js/reveal-home.js"></script>
+    <script>
+
+$(function () {
+	$("#search-availability").validate({
+		ignore: [],
+		focusCleanup: true,
+		rules: {
+			"start": {required: true},
+			"end": {required: true},
+			"adults": {required: true, number: true},
+			"children": {required: true, number: true},
+		},
+		messages: {
+			"start": {
+				required: "Check-In date is required",
+			},
+			"end": {
+				required: "Check-Out date is required",
+			},
+			"adults": {
+				required: "Number of adults is required",
+				number: "Number of adults should be numeric",
+			},
+			"children": {
+				required: "Number of children is required",
+				number: "Number of children should be numeric",
+			},
+		},
+		errorPlacement: function(error, element) {
+			$("#"+element.attr("name")+"_error").text(error.text());
+			$(element).addClass("is-invalid");
+		},
+		success: function(error){},
+		submitHandler: function(form) {
+			$('form button[type=submit]').attr('disabled', 'disabled');
+			$('form button[type=submit]').html('<i class="fa fa-spinner fa-spin"></i> Wait..');
+			form.submit();
+		}
+	}); 
+  });
+    </script>
+{{end}}

@@ -1,0 +1,10 @@
+mode: set
+github.com/saquibhasan3/go-reservation/cmd/web/main.go:22.13,24.16 2 0
+github.com/saquibhasan3/go-reservation/cmd/web/main.go:24.16,26.3 1 0
+github.com/saquibhasan3/go-reservation/cmd/web/main.go:27.2,40.16 4 0
+github.com/saquibhasan3/go-reservation/cmd/web/main.go:43.18,59.16 10 1
+github.com/saquibhasan3/go-reservation/cmd/web/main.go:59.16,62.3 2 0
+github.com/saquibhasan3/go-reservation/cmd/web/main.go:64.2,71.12 6 1
+github.com/saquibhasan3/go-reservation/cmd/web/middleware.go:9.45,18.2 3 1
+github.com/saquibhasan3/go-reservation/cmd/web/middleware.go:20.50,22.2 1 1
+github.com/saquibhasan3/go-reservation/cmd/web/routes.go:11.49,34.2 12 1
